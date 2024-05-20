@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}{{post.title}}{% endblock title %}{{post.title}}
+
+{% block content %}
+<main class="mt-4 p-3 flex flex-col gap-8 w-full h-screen">
+  
+        <section class="blog flex flex-col gap-4  md:flex-row ">
+            <div class="infos flex flex-col gap-4 w-full">
+                <h1 class="text-4xl font-semibold">{{post.title}}</h1>
+                <img src="/media/{{post.img}}" alt="" class="w-[250px] h-auto">
+                <p>{{post.date}}</p>
+                <p class="font-semibold">{{post.content | safe}}</p>
+                
+                
+            </div>
+            
+        </section>
+    
+    </main>
+
+{% endblock content %}
+
+

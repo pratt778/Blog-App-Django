@@ -1,16 +1,9 @@
 {% extends "base.html" %}
-{% block title %}Home-Blog App{% endblock title %}
+{% block title %}{% endblock title %}
 {% block content %}
-<section class="flex gap-3 mt-3 p-2 ">
-        {% for c in cat %}
-
-            <button class=" p-3 font-semibold bg-blue-500 text-white hover:bg-green-300"><a href="category/{{c.url}}">{{c.name | capfirst}}</a></button>
-        
-        {% endfor %}
-    </ul>
-</section>
 <main class="mt-4 p-3 flex flex-col gap-8 w-full h-screen">
-{% for p in post %}
+    <h1 class="text-3xl font-semibold text-orange-500">{{cate.name | capfirst}}</h1>
+    {% for p in post %}
     <section class="blog flex flex-col gap-4  md:flex-row md:justify-around">
         <div class="infos flex flex-col gap-4 w-full md:w-[60%]">
 
@@ -18,13 +11,12 @@
             <p class="font-semibold">{{p.content | truncatewords:60 | safe}}</p>
             
             <button class="bg-blue-600 p-2 text-white w-fit">
-                <a href="home/{{p.url}}">Readmore..</a></button>
+                <a href="home/{{p.url}}">Readmore</a></button>
         </div>
         <img src="/media/{{p.img}}" alt="" class="w-[250px] h-auto">
         
     </section>
     {% endfor %}
+
 </main>
-
-
-    {% endblock content %}
+{% endblock content %}
